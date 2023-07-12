@@ -58,7 +58,7 @@ const ingredients_step_id = [
   {step_id: '2', ingredient_id: '2', quantity: 1},
   {step_id: '4', ingredient_id: '3', quantity: 1},
   {step_id: '4', ingredient_id: '4', quantity: 1},
-  {step_id: '5', ingredient_id: '5', quantity: },
+  {step_id: '5', ingredient_id: '5', quantity: 1},
   
     // Breaded Chicken Cutlets
   {step_id: '1', ingredient_id: '1', quantity: 4},
@@ -77,9 +77,9 @@ exports.seed = async function(knex) {
   await knex('recipe').del()
   await knex('steps').del()
   await knex('ingredients').del()
-  await knex('ingredients_step_id').del()
+  await knex('ingredient_step_id').del()
   await knex('recipe').insert(recipe);
   await knex('steps').insert(steps);
   await knex('ingredients').insert(ingredients);
-  await knex('ingredients_step_id').insert(ingredients_step_id)
+  await knex('ingredient_step_id').insert(ingredients_step_id)
 };
